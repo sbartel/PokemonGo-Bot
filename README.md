@@ -1,5 +1,3 @@
-A Readme change Woo!
-
 <p align="center">
   <a href="">
     <img alt="Logo" src="https://www.brooklinelibrary.org/wp-content/uploads/2016/07/2000px-Pok%C3%A9_Ball.svg_-1.png" width="100">
@@ -9,8 +7,6 @@ A Readme change Woo!
 <p align="center">
   <a href="https://pokemongo-bot.herokuapp.com/"><img alt="Slack" src="https://pokemongo-bot.herokuapp.com/badge.svg"></a>
 </p>
-
-# ANOTHER TEST CHANGE
 
 # PokemonGo-Bot
 The Pokemon Go Bot, baking with community.
