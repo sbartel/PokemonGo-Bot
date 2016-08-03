@@ -231,8 +231,11 @@ class PokemonGoBot(object):
         self.api.get_player().get_inventory()
 
         inventory_req = self.api.call()
-        inventory_dict = inventory_req['responses']['GET_INVENTORY'][
-            'inventory_delta']['inventory_items']
+        try:
+            inventory_dict = inventory_req['responses']['GET_INVENTORY'][
+                'inventory_delta']['inventory_items']
+        except KeyError:
+            inventory_dict = {}
 
         user_web_inventory = 'web/inventory-%s.json' % (self.config.username)
         with open(user_web_inventory, 'w') as outfile:
@@ -397,6 +400,8 @@ class PokemonGoBot(object):
     def get_inventory_count(self, what):
         self.api.get_inventory()
         response_dict = self.api.call()
+        pokecount = 0
+        itemcount = 0
         if 'responses' in response_dict:
             if 'GET_INVENTORY' in response_dict['responses']:
                 if 'inventory_delta' in response_dict['responses'][
